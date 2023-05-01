@@ -65,4 +65,4 @@ def predict(
     print("=" * 80)
 
 prompt = "We have a local csv file named demo_data.csv, how to use Pandas to make a summary for this csv file? (please give me complete and runable code)"
-predict_once(prompt, tokenizer, model)
+predict(prompt, tokenizer, model)
