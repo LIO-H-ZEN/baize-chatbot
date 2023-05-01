@@ -9,6 +9,13 @@ from app_modules.utils import *
 from app_modules.presets import *
 from app_modules.overwrites import *
 
+top_p = 0.95
+temperature = 0.1
+max_length_tokens = 512
+max_context_length_tokens = 2048
+history = ""
+load_8bit = False
+
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s",
@@ -18,12 +25,6 @@ adapter_model = sys.argv[2]
 tokenizer, model, device = load_tokenizer_and_model(
     base_model, adapter_model, load_8bit=load_8bit
 )
-
-top_p = 0.95
-temperature = 0.1
-max_length_tokens = 512
-max_context_length_tokens = 2048
-history = ""
 
 def predict(
     text,
